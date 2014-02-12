@@ -1,0 +1,12 @@
+This is the test game I made for my original project idea. 
+Very cheesy and basic but you get the idea.
+
+
+Controls:
+W, A, S, D keys = player movement
+Mouse movement = primary cursor movement
+Arrow keys = secondary cursor movement (originally there was only one cursor but something went screwy with the new Blender update so I had to add a second one for aiming)
+Spacebar = jump
+
+
+Object: Just left and right click different things, you will get the idea eventually.
