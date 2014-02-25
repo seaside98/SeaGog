@@ -1,9 +1,14 @@
 ﻿#pragma strict
 
+private var timePassed : float;
+
 function Update () {
-	var diffX : float = Mathf.Abs(renderWorld.locationX - transform.position.x + 17);
-	var diffY : float = Mathf.Abs(renderWorld.locationY - transform.position.y + 10);
-	if (diffX > 19 || diffY > 12) {
-		Destroy(gameObject);
+	if (gameObject.activeInHierarchy) {
+		timePassed = 0.0;
+	} else {
+		timePassed += Time.deltaTime;
+		if (timePassed > 1.0) {
+			Destroy(gameObject);
+		}
 	}
 }

@@ -1,5 +1,9 @@
 ﻿#pragma strict
-
+/*Block IDs
+-1 : Air
+ 0 : Dirt
+ 1 : Stone
+*/
 var worldWidth : int = 512;
 var worldHeight : int = 256;
 
@@ -20,18 +24,22 @@ function Awake () {
 		var height2 : float = yScale * Mathf.PerlinNoise((column + 1.0) * xScale + seed, 0.0) + 150.0;
 		var height : int = Mathf.RoundToInt( height2 - (yScale / 4.0 * Mathf.PerlinNoise( 0.0, (column + 1.0) * xScale * 3.0 + seed) ) );
 		var random : int = Random.Range(4, 6);
-		for (var row : int = 0; row < height; row++) {
-			blockArray[column, row] = 1; //dirt
-			if (row < height - random) {
-				blockArray[column, row] = 2; //stone
-			}
-			if (row < height - 10) {
-				if (Mathf.PerlinNoise((column + 1.0) * 0.15 + seed, (row + 1.0) * 0.15 + seed) <= 0.35) {
-					blockArray[column, row] = 0; //caves (lower)
+		for (var row : int = 0; row < worldHeight; row++) {
+			blockArray[column, row] = -1; //air
+			if (row < height) {
+				if (row < height - random) {
+					blockArray[column, row] = 1; //stone
+				} else {
+					blockArray[column, row] = 0; //dirt
 				}
-			} else {
-				if (Mathf.PerlinNoise((column + 1.0) * 0.05 + seed, (row + 1.0) * 0.05 + seed) <= 0.25) {
-					blockArray[column, row] = 0; //caves (higher)
+				if (row < height - 10) {
+					if (Mathf.PerlinNoise((column + 1.0) * 0.15 + seed, (row + 1.0) * 0.15 + seed) <= 0.35) {
+						blockArray[column, row] = -1; //caves (lower)
+					}
+				} else {
+					if (Mathf.PerlinNoise((column + 1.0) * 0.05 + seed, (row + 1.0) * 0.05 + seed) <= 0.25) {
+						blockArray[column, row] = -1; //caves (higher)
+					}
 				}
 			}
 		}

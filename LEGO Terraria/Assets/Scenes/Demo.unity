@@ -113,8 +113,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ec13b5958dfc3954086adf84899192e8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  characterObject: {fileID: 0}
   worldWidth: 512
   worldHeight: 256
+  containerWidth: 18
+  containerHeight: 11
   parentObject: {fileID: 1696161098}
   blockDirt: {fileID: 100000, guid: 7bba6f199b2d28549ae21787df1717eb, type: 2}
   blockStone: {fileID: 100000, guid: 37fa291674656f1438d78807d123d70c, type: 2}
@@ -257,7 +260,7 @@ Camera:
   far clip plane: 1000
   field of view: 60
   orthographic: 1
-  orthographic size: 9
+  orthographic size: 4.5
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2
@@ -273,7 +276,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 366966382}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: .550000012, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 241539394}
