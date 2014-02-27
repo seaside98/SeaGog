@@ -1,4 +1,7 @@
-SeaGog
-======
+#SeaGog
+A Unity LEGO game project.
 
-Seaside98 and Goggles99's repository
+##ToDo
+- [ ] Update graphics
+- [ ] 
+
