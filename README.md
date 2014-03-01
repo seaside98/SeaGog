@@ -1,4 +1,2 @@
-SeaGog
-======
-
-Seaside98 and Goggles99's repository
+#SeaGog
+A Unity LEGO game project.
