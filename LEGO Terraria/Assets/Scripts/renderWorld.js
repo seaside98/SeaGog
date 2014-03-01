@@ -97,16 +97,20 @@ function HandleBlocks () {
 	
 	for (var width : int = destroyColumns[0]; width <= destroyColumns[3]; width++) {
 		for (var height : int = destroyRows[0]; height <= destroyRows[3]; height++) {
-			if (blockObjects[width, height] != null && !(width >= locationX && width < locationX + containerWidth && height >= locationY && height < locationY + containerHeight)) {
-				UnloadBlock(blockArray[width, height], width, height);
+			if (width < worldWidth && width > -1 && height < worldHeight && height > -1) {
+				if (blockObjects[width, height] != null && !(width >= locationX && width < locationX + containerWidth && height >= locationY && height < locationY + containerHeight)) {
+					UnloadBlock(blockArray[width, height], width, height);
+				}
 			}
 		}
 	}
 
 	for (var column : int = locationX; column < locationX + containerWidth; column++) {
 		for (var row : int = locationY; row < locationY + containerHeight; row++) {
-			if (blockArray[column, row] > -1 && blockObjects[column, row] == null) {
-				LoadBlock(blockArray[column, row], column, row);
+			if (column < worldWidth && column > -1 && row < worldHeight && row > -1) {
+				if (blockArray[column, row] > -1 && blockObjects[column, row] == null) {
+					LoadBlock(blockArray[column, row], column, row);
+				}
 			}
 		}
 	}

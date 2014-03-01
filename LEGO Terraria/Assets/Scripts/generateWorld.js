@@ -19,7 +19,7 @@ function Awake () {
 	seed = Random.Range(0.0, 1000000.0);
 	xScale = xScale / 100;
 	
-	for (var column : int; column < worldHeight; column++) {
+	for (var column : int; column < worldWidth; column++) {
 		//terrain
 		var height2 : float = yScale * Mathf.PerlinNoise((column + 1.0) * xScale + seed, 0.0) + 150.0;
 		var height : int = Mathf.RoundToInt( height2 - (yScale / 4.0 * Mathf.PerlinNoise( 0.0, (column + 1.0) * xScale * 3.0 + seed) ) );
