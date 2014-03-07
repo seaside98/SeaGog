@@ -25,7 +25,3 @@ function Awake () {
 	}
 	parent.transform.position = Vector3(-8, 0, -8);
 }
-
-function Update () {
-	parent.transform.RotateAround (Vector3.zero, Vector3.up, 20 * Time.deltaTime);
-}
