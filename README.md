@@ -1,10 +1,10 @@
-#SeaGog
-A Unity LEGO game project.
+#seaside98 / Unity
+Several Unity game projects I am currently working on.
 
-##LEGO Terraria
-LEGO Terraria is a 2D side scroller based off of the game Terraria.
+##SeaGog
+SeaGog is a project I am working on for Goggles99.
 
 ##Impossible
-Impossible takes the LEGO Terraria one step further, combining Terraria, Minecraft, and Fez into one awesome LEGO game.
+Impossible is a personal project I am working on.
 
-Both games are in early stages of developement, without functional gameplay.
+Both games are in early stages of development, without functional gameplay.
