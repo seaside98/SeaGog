@@ -1,20 +1,42 @@
 ﻿#pragma strict
+import System.Collections.Generic;
 
-static var blockValue : int[,,];
+//static var blockValue : int[,,];
+var seed : int = 0;
 
-var prefab : GameObject;
+var imageSize : int;
+var blockImages : Texture2D[];
+static var blockPixels : List.<Color[]>;
+
+static var chunks : Dictionary.<int[],int[,,]>;
+static var activeLayers : int[,]; //0 = NorthSouth, 1 = EastWest
+
+/*var faceDepth : int;
+private var lastDirection : boolean; //Right is true, left is false
+private var renderedFaces : boolean[,];*/
+
+/*var prefab : GameObject;
 var parent : Transform;
 
-var seed : int = 0;
+
 var octaves : int = 8;
 var frq : float = 50.0;
 var amp : float = 1.0;
-var size : int = 50;
-
-private var perlin : PerlinNoise;
+var size : int = 50;*/
 
 function Awake () {
-	perlin = new PerlinNoise(seed);
+	//Store the block pixels
+	blockPixels = new List.<Color[]>();
+	for (var i : int = 0; i < blockImages.length; i++) {
+		blockPixels.Add(blockImages[i].GetPixels());
+	}
+	
+	//World generation
+	chunks = new Dictionary.<int[],int[,,]>();
+	activeLayers = new int[2,2];
+	var perlin : PerlinNoise = new PerlinNoise(seed);
+	
+	/*perlin = new PerlinNoise(seed);
 	blockValue = new int[216, 216, 216];
 	for( var x : int = 0; x < size; x++ ) {
 		for( var y : int = 0; y < size; y++ ) {
@@ -23,5 +45,7 @@ function Awake () {
 			instant.transform.parent = parent;
 		}
 	}
-	parent.transform.position = Vector3(-8, 0, -8);
+	parent.transform.position = Vector3(-8, 0, -8);*/
+	
+	//World rendering
 }
