@@ -6,10 +6,11 @@ var seed : int = 0;
 
 var imageSize : int;
 var blockImages : Texture2D[];
-static var blockPixels : List.<Color[]>;
+var blockPixels : List.<Color[]>;
 
 static var chunks : Dictionary.<int[],int[,,]>;
-static var activeLayers : int[,]; //0 = NorthSouth, 1 = EastWest
+private static var activeLayers : int[]; //0 = NorthSouth, 1 = EastWest
+private static var activeBlocks : int[]; //0 = NorthSouth, 1 = EastWest
 
 /*var faceDepth : int;
 private var lastDirection : boolean; //Right is true, left is false
@@ -33,7 +34,7 @@ function Awake () {
 	
 	//World generation
 	chunks = new Dictionary.<int[],int[,,]>();
-	activeLayers = new int[2,2];
+	activeLayers = new int[2];
 	var perlin : PerlinNoise = new PerlinNoise(seed);
 	
 	/*perlin = new PerlinNoise(seed);
