@@ -1078,7 +1078,7 @@ BoxCollider2D:
   m_Enabled: 1
   m_Material: {fileID: 0}
   m_IsTrigger: 0
-  m_Size: {x: 13.5438166, y: 1.95700169}
+  m_Size: {x: 92.9199982, y: 1.95700169}
   m_Center: {x: -.0917840004, y: -2.68131495}
 --- !u!1 &496089390
 GameObject:
@@ -2386,7 +2386,7 @@ Rigidbody2D:
   m_Mass: 1
   m_LinearDrag: 0
   m_AngularDrag: .0500000007
-  m_GravityScale: 1
+  m_GravityScale: 3
   m_FixedAngle: 1
   m_IsKinematic: 0
   m_Interpolate: 1
@@ -2403,8 +2403,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9336d79b232e98745a838c37fd699f3b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  jumpForce: 200
-  speed: 2
+  jumpForce: 450
+  speed: 4
 --- !u!95 &1116960465
 Animator:
   serializedVersion: 2
@@ -4118,6 +4118,7 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 2058250760}
+  - 114: {fileID: 2058250762}
   m_Layer: 0
   m_Name: Viewport
   m_TagString: Untagged
@@ -4137,6 +4138,19 @@ Transform:
   m_Children:
   - {fileID: 1036359156}
   m_Father: {fileID: 0}
+--- !u!114 &2058250762
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 2058250759}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ac11642a180496e40ab6f530b3a6d6c2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  fraction: .0199999996
+  player: {fileID: 1116960461}
 --- !u!1 &2067818628
 GameObject:
   m_ObjectHideFlags: 0

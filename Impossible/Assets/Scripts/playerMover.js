@@ -31,24 +31,25 @@ function Update () {
 	    Flip();
 	}
 	rigidbody2D.velocity = new Vector2(speed * key, rigidbody2D.velocity.y); 
-
-	if (Input.GetButtonDown("Jump") && extraJump) {
-  		extraJump = false;
-  		rigidbody2D.velocity = new Vector2(rigidbody2D.velocity.x, 0);
-        rigidbody2D.AddForce(new Vector2(0f, jumpForce));
-    } else if (Input.GetButtonDown("Jump") && grounded) {
+    
+    if (Input.GetButtonDown("Jump") && grounded) {
     	grounded = false;
         rigidbody2D.velocity = new Vector2(rigidbody2D.velocity.x, 0);
         rigidbody2D.AddForce(new Vector2(0f, jumpForce));
         extraJump = true;
-        
+    	
+    } else if (Input.GetButtonDown("Jump") && extraJump) {
+  		extraJump = false;
+  		rigidbody2D.velocity = new Vector2(rigidbody2D.velocity.x, 0);
+        rigidbody2D.AddForce(new Vector2(0f, jumpForce));
     }
     
-    if (transform.position.x > 1) {
+    //Limit the movements to one block
+    /*if (transform.position.x > 1) {
     	transform.position.x = 1 - transform.position.x;
     } else if (transform.position.x < 0) {
     	transform.position.x = transform.position.x + 1;
-    }
+    }*/
 }
 
 function Flip () {
