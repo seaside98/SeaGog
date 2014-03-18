@@ -43,13 +43,6 @@ function Update () {
   		rigidbody2D.velocity = new Vector2(rigidbody2D.velocity.x, 0);
         rigidbody2D.AddForce(new Vector2(0f, jumpForce));
     }
-    
-    //Limit the movements to one block
-    /*if (transform.position.x > 1) {
-    	transform.position.x = 1 - transform.position.x;
-    } else if (transform.position.x < 0) {
-    	transform.position.x = transform.position.x + 1;
-    }*/
 }
 
 function Flip () {
@@ -60,4 +53,10 @@ function Flip () {
     var theScale : Vector3 = transform.localScale;
     theScale.x *= -1;
     transform.localScale = theScale;
+}
+
+function Move (x : int, y : int) {
+	transform.position = new Vector2(
+		transform.position.x + x,
+		transform.position.y + y);
 }
